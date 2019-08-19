@@ -30,5 +30,6 @@ Then(/^I see that login was successful$/) do
   file = YAML.load_file("config/test_data.yml")
   p file['user1']['username']
   @pages.home.userName = file['user1']['username']
+  p @pages.home.userName
   p "Usernames match!" if @pages.home.userNameElem.text == @pages.home.userName
 end

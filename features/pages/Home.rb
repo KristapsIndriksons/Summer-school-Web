@@ -4,15 +4,15 @@ class HomePage < BasePage
   attr_accessor :skipButton, :homeButton, :friendsTab, :friendTag, :voiceCallButton
   attr_accessor :chatMessageInput, :leaveCallButton, :userSettings, :logOutButton, :friendName, :userName, :userNameElem
 
+  @friendName = ''
+  @userName = ''
   def initialize
-    @friendName = ''
-    @userName = ''
 
     @homeButton = Element.new(:css,"[aria-label='Home']")
 
     @friendsTab = Element.new(:xpath,"//div[text()='Friends']")
 
-    @friendTag = Element.new(:xpath,"//span[text()='#{@friendName}']")   
+    # @friendTag = Element.new(:xpath,"//span[text()='#{@friendName}']")   
 
     @voiceCallButton = Element.new(:css,"[aria-label='Start Voice Call']")
 
@@ -26,7 +26,7 @@ class HomePage < BasePage
 
     @logOutConfirm = Element.new(:xpath,"//button[@type='submit']")
 
-    @userNameElem = Element.new(:xpath, "//span[text()='#{@userName}']")
+    @userNameElem = Element.new(:xpath, "//span[text()='Test537']")
   end
 
   def load_home_page
