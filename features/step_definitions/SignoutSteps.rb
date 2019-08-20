@@ -1,10 +1,3 @@
-# Given(/^I am on Discord home page$/) do 
-
-# end
-
-# And(/^I login as user1$/) do 
-
-# end
 
 And(/^I log out from Discord App$/) do 
   @pages.home.userSettings.click
@@ -16,5 +9,5 @@ And(/^I log out from Discord App$/) do
 end
 
 Then(/^I have successfully logged out$/) do 
- p "You are logged out!" if @pages.login.email.visible? and @pages.login.password.visible?
+ p "Your are signed out!" if @pages.login.email.visible? and @pages.login.password.visible?
 end

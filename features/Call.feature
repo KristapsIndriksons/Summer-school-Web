@@ -6,6 +6,6 @@ Feature: Call in features
     Given I am on Discord login page
     And I login as user1
     And I click on skip the tutorial
-    And I Start a New Chat
-    And I Start a 30 Second Voice Call
+    And I Start a New Chat with "Naduha"
+    And I Start a 10 Second Voice Call
 

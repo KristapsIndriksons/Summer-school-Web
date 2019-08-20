@@ -67,4 +67,24 @@ class Element
   def attribute(attributeName)
     find[:atributeName]
   end
+
+  def get_element(wait: 3)
+    Capybara.default_max_wait_time = 1
+    exception = ""
+    start = Time.now
+    while (Time.now - start) < wait
+      begin
+        elem = Capybara.find(@value[:type],@value[:value])
+        return true
+      rescue => e
+        exception = e
+        p "Again, #{@value[:type]} --- #{@value[:value]}"
+        sleep(0.1)
+      end
+    end
+    # raise "Element #{@value[:type]} --- #{@value[:value]} is not visible after #{wait} seconds \n Exception: #{exception}"
+    Capybara.default_max_wait_time = 10
+    return false
+  end
+
 end

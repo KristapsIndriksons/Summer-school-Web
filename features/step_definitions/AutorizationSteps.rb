@@ -30,4 +30,6 @@ Then(/^I see that login was successful$/) do
   @pages.home.userName = file['user1']['username']
   p @pages.home.userName
   p "Usernames match!" if @pages.home.userNameElem.text == @pages.home.userName
+  @pages.home.homeButton.visible?
+  @pages.home.userSettings.visible?
 end

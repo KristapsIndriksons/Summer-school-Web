@@ -71,3 +71,9 @@ def tecdoc_image_exists
   expect(page).to have_css("img[src*='medias/images/tecdoc-parts']")
   page.go_back
 end
+public
+def all
+  elem = []
+  page.all(:xpath, "//button[starts-with(@class, 'close')]")
+  elem
+end
