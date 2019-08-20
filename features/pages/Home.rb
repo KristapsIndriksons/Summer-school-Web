@@ -1,7 +1,7 @@
 require_relative '../../features/pages/base'
 # Login page class
 class HomePage < BasePage
-  attr_accessor :skipButton, :homeButton, :friendsTab, :friendTag, :voiceCallButton
+  attr_accessor :skipButton, :homeButton, :friendsTab, :friendTag, :voiceCallButton, :logOutConfirm
   attr_accessor :chatMessageInput, :leaveCallButton, :userSettings, :logOutButton, :friendName, :userName, :userNameElem
 
   @friendName = ''
@@ -12,7 +12,7 @@ class HomePage < BasePage
 
     @friendsTab = Element.new(:xpath,"//div[text()='Friends']")
 
-    # @friendTag = Element.new(:xpath,"//span[text()='#{@friendName}']")   
+    @friendTag = Element.new(:xpath,"//span[text()='Kristaps Indriksons']")   
 
     @voiceCallButton = Element.new(:css,"[aria-label='Start Voice Call']")
 
@@ -31,5 +31,14 @@ class HomePage < BasePage
 
   def load_home_page
     visit ''
+  end
+
+  def call(time)
+  timeStart = Time.now
+  time = time.to_f
+  while Time.now - timeStart < time
+    p "Talking to the user"
+  end
+  p "Call ended!"
   end
 end

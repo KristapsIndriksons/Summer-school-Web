@@ -1,6 +1,4 @@
-# @file = YAML.load_file("config/test_data.yml")
-
-Given(/^I am on login page$/) do
+Given(/^I am on Discord login page$/) do
   @pages.login.load_home_page
 end
 
